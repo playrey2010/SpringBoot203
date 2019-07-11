@@ -8,15 +8,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class HomeController {
-
+    //@GetMapping processes the GET requests
     @GetMapping("/songform")
-    public String loadFormPage(Model model){
+    public String loadSongForm(Model model){
         model.addAttribute ("song", new Song());
         return "songform";
     }
-
+    //@PostMapping processes post requests
     @PostMapping("/songform")
-    public String loadFromPage(@ModelAttribute Song song,
+    //The @ModelAttribute allows for the model created to be used in this method
+    public String processSongForm(@ModelAttribute Song song,
                                Model model) {
         model.addAttribute ( "song", song );
         return "confirmsong";
