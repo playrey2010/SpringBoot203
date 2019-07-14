@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class HomeController {
     //@GetMapping processes the GET requests
     @GetMapping("/songform")
-    public String loadSongForm(Model model){
+    public String loadFormPage(Model model){
         model.addAttribute ("song", new Song());
         return "songform";
     }
